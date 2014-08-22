@@ -1,0 +1,109 @@
+<div class="preloader">
+  Loading...
+</div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <% @items.each do |item| %>
+      <div class="swiper-slide <%= random_color %>-slide">
+        <div class="title" data-length="<%= item.title_length %>"><%= link_to item.title, item.url %></div>
+      </div>
+    <% end %>
+    <div class="swiper-slide blue-slide">
+      <div class="title"><a href="http://www.wedxt.com">维斗喜帖</a></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  //初始化标题字体大小
+  function initFontSize(){
+    //获得窗口宽度
+    var window_width = $(window).width();
+
+    //获得字体标准大小
+    var font_size = 24;
+    if(window_width < 321){
+      font_size = 12;
+    }else if(window_width < 481){
+      font_size = 14;
+    }else if(window_width < 681){
+      font_size = 20;
+    }else if(window_width < 961){
+      font_size = 30;
+    }else{
+      font_size = 42;
+    };
+    //修改标题
+    $('.title').each(function(){
+      var title_length = $(this).data("length");
+      fsize = font_size + (30 - title_length) * 0.8;
+      $(this).css('font-size', fsize + 'px');
+    });
+  }
+
+  $(document).ready(function () {
+    initFontSize();
+  });
+
+  $(window).resize(function() {
+    initFontSize();
+  });
+</script>
+
+<script>
+  var holdPosition = 0;
+  var mySwiper = new Swiper('.swiper-container',{
+    slidesPerView:'auto',
+    mode:'vertical',
+    watchActiveIndex: true,
+    onTouchStart: function() {
+      holdPosition = 0;
+    },
+    onResistanceBefore: function(s, pos){
+      holdPosition = pos;
+    },
+    onTouchEnd: function(){
+      if (holdPosition>100) {
+        // Hold Swiper in required position
+        mySwiper.setWrapperTranslate(0,100,0)
+
+        //Dissalow futher interactions
+        mySwiper.params.onlyExternal=true
+
+        //Show loader
+        $('.preloader').addClass('visible');
+
+        //Load slides
+        loadNextItem();
+      }
+    }
+  })
+  var slideNumber = 0;
+  function loadNextItem(){
+    //Prepend new slide
+    var colors = ['red','blue','green','orange','pink'];
+    var color = colors[Math.floor(Math.random()*colors.length)];
+
+    $.ajax({
+        url: "/next_items"
+      }).done(function(html) {
+        //return $("#results").append(html);
+        mySwiper.prependSlide(html, 'swiper-slide '+color+'-slide')
+
+        //Release interactions and set wrapper
+        mySwiper.setWrapperTranslate(0,0,0)
+        mySwiper.params.onlyExternal=false;
+
+        //Update active slide
+        mySwiper.updateActiveSlide(0)
+
+        //Hide loader
+        $('.preloader').removeClass('visible')
+
+        //
+        initFontSize();
+
+    });
+
+  }
+</script>

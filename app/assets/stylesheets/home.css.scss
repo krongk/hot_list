@@ -83,4 +83,6 @@ body {
 .swiper-slide .title a, .swiper-slide .title a:visited{ 
   color: #fff;
   text-decoration: none;
+  display: block;
+  overflow: hidden;
 }

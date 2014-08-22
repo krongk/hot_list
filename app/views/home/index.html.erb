@@ -5,7 +5,7 @@
   <div class="swiper-wrapper">
     <% @items.each do |item| %>
       <div class="swiper-slide <%= random_color %>-slide">
-        <div class="title" data-length="<%= item.title_length %>"><%= link_to item.title, item.url %></div>
+        <div class="title" data-length="<%= item.title_length %>"><%= link_to item.title.truncate(28), item.url %></div>
       </div>
     <% end %>
     <div class="swiper-slide blue-slide">
@@ -24,12 +24,16 @@
     var font_size = 24;
     if(window_width < 321){
       font_size = 12;
+      $('.swiper-slide').css('height', '60px')
     }else if(window_width < 481){
       font_size = 14;
+      $('.swiper-slide').css('height', '60px')
     }else if(window_width < 681){
       font_size = 20;
+      $('.swiper-slide').css('height', '80px')
     }else if(window_width < 961){
       font_size = 30;
+      $('.swiper-slide').css('height', '80px')
     }else{
       font_size = 42;
     };

@@ -16,4 +16,7 @@ gem 'devise'
 gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
-gem 'acts-as-taggable-on'
+gem 'therubyracer', :platform=>:ruby
+#gem 'acts-as-taggable-on'
+gem 'mechanize'
+gem 'nokogiri'

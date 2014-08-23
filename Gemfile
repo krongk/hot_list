@@ -19,4 +19,4 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 #gem 'acts-as-taggable-on'
 gem 'mechanize'
-gem 'nokogiri'
+gem 'hpricot'

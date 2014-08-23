@@ -1,5 +1,5 @@
 <div class="preloader">
-  热撸中...
+  撸啊撸...
 </div>
 <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -7,13 +7,13 @@
       <div class="swiper-slide <%= random_color %>">
         <div class="title" data-length="<%= item.title_length %>">
           <%= link_to item.url do %>
-            <%= item.id %>. <%= item.title %>
+            <%= item.title %>
           <% end %>
         </div>
       </div>
     <% end %>
     <div class="swiper-slide">
-      <div class="title" style="text-align: center;"><a href="http://www.wedxt.com">---维斗喜帖---</a></div>
+      <div class="title" style="text-align: center;"><a href="http://www.wedxt.com">---&lt;&lt;维斗喜帖&gt;&gt;---</a></div>
     </div>
   </div>
 </div>
@@ -26,9 +26,7 @@
 
     //获得字体标准大小
     var font_size = 24;
-    if(window_width < 321){
-      font_size = 14;
-    }else if(window_width < 481){
+    if(window_width < 481){
       font_size = 24;
     }else if(window_width < 681){
       font_size = 28;
@@ -88,7 +86,7 @@
   var slideNumber = 0;
   function loadNextItem(){
     //Prepend new slide
-    var colors = ['gray','red','orange','cyan2','blue','grass','green','light-green','cyan','purple','pink','yellow'];
+    var colors = ['gray','orange','cyan2','pink', 'light-green', 'blue','red','grass','green','cyan','purple','yellow'];
     var color = colors[Math.floor(Math.random()*colors.length)];
 
     $.ajax({

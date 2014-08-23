@@ -16,7 +16,8 @@ gem 'devise'
 gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
-gem 'therubyracer', :platform=>:ruby
-#gem 'acts-as-taggable-on'
-gem 'mechanize'
-gem 'hpricot'
+
+#blow only render on linux
+#gem 'therubyracer', :platform=>:ruby
+#gem 'mechanize'
+#gem 'hpricot'

@@ -12,6 +12,8 @@
 /db/*.sqlite3-journal
 /config/database.yml
 /config/application.yml
+Gemfile
+Gemfile.lock
 
 # Ignore all logfiles and tempfiles.
 /log/*.log

@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     html = [%{<div class="swiper-slide <%= random_color %>">}]
     items.each do |item|
       html << %{<div class="title" data-length="#{item.title_length}">}
-      html << %{<a href="#{item.url}">#{item.id}. #{item.title}</a>}
+      html << %{<a href="#{item.url}">#{item.title}</a>}
       html << %{</div>}
     end
     html << %{</div>}

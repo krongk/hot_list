@@ -16,7 +16,7 @@ class HomeController < ApplicationController
       html << %{</div>}
     end
     html << %{</div>}
-
+    sleep(1)
     render text: html.join
   end
 end

@@ -46,23 +46,8 @@ body {
   text-align: center;
   position: relative;
   z-index: 10;
-  
 }
-.red-slide {
-  background: #ca4040;
-}
-.blue-slide {
-  background: #4390ee;
-}
-.orange-slide {
-  background: #ff8604;
-}
-.green-slide {
-  background: #49a430;
-}
-.pink-slide {
-  background: #973e76;
-}
+
 .swiper-slide {
   text-valign: middle;
   min-height: 100px;
@@ -95,3 +80,15 @@ body {
   overflow: hidden;
 }
 
+.gray{ background: gray;}
+.red{ background: #F05557;}
+.orange{ background: #EFAE49;}
+.cyan2{ background: #8AAAD9;}
+.blue{ background: #38A5DB;}
+.grass{ background: #A2CE7E;}
+.green{ background: #21B799;}
+.light-green{ background: #36D9C3;}
+.cyan{ background: #74C7D5;}
+.purple{ background: #9661A8;}
+.pink{ background: #F1678D;}
+.yellow{ background: #FAC928;}

@@ -1,6 +1,6 @@
 module ApplicationHelper
   
   def random_color
-    %w{red blue green orange pink}[rand(5)]
+    ['gray','red','orange','cyan2','blue','grass','green','light-green','cyan','purple','pink','yellow'][rand(12)]
   end
 end

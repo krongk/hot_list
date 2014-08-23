@@ -4,7 +4,7 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <% @items.each do |item| %>
-      <div class="swiper-slide <%= random_color %>-slide">
+      <div class="swiper-slide <%= random_color %>">
         <div class="title" data-length="<%= item.title_length %>"><%= link_to item.title.truncate(28), item.url %></div>
       </div>
     <% end %>
@@ -84,14 +84,14 @@
   var slideNumber = 0;
   function loadNextItem(){
     //Prepend new slide
-    var colors = ['red','blue','green','orange','pink'];
+    var colors = ['gray','red','orange','cyan2','blue','grass','green','light-green','cyan','purple','pink','yellow'];
     var color = colors[Math.floor(Math.random()*colors.length)];
 
     $.ajax({
         url: "/next_items"
       }).done(function(html) {
         //return $("#results").append(html);
-        mySwiper.prependSlide(html, 'swiper-slide '+color+'-slide')
+        mySwiper.prependSlide(html, 'swiper-slide '+color)
 
         //Release interactions and set wrapper
         mySwiper.setWrapperTranslate(0,0,0)

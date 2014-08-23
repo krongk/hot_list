@@ -64,10 +64,11 @@ body {
   background: #973e76;
 }
 .swiper-slide {
-  height: 100px;
+  text-valign: middle;
+  min-height: 100px;
   width: 100%;
-  line-height: 100px;
-  opacity: 0.2;
+  height: 100px;
+  opacity: 0.8;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
   -ms-transition: 300ms;
@@ -77,6 +78,13 @@ body {
 .swiper-slide-visible {
   opacity: 1;
 }
+/*http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/*/
+.swiper-slide .title{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .swiper-slide .title{
   font-size: 42px;
 }
@@ -86,3 +94,4 @@ body {
   display: block;
   overflow: hidden;
 }
+

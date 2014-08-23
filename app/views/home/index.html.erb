@@ -24,16 +24,12 @@
     var font_size = 24;
     if(window_width < 321){
       font_size = 12;
-      $('.swiper-slide').css('height', '60px')
     }else if(window_width < 481){
       font_size = 14;
-      $('.swiper-slide').css('height', '60px')
     }else if(window_width < 681){
       font_size = 20;
-      $('.swiper-slide').css('height', '80px')
     }else if(window_width < 961){
       font_size = 30;
-      $('.swiper-slide').css('height', '80px')
     }else{
       font_size = 42;
     };
@@ -59,6 +55,9 @@
   var mySwiper = new Swiper('.swiper-container',{
     slidesPerView:'auto',
     mode:'vertical',
+    calculateHeight: true,
+     freeMode : true, //Enable free mode
+    freeModeFluid : true, //Enable 'fluid' free mode
     watchActiveIndex: true,
     onTouchStart: function() {
       holdPosition = 0;

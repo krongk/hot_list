@@ -27,7 +27,7 @@
     //获得字体标准大小
     var font_size = 24;
     if(window_width < 481){
-      font_size = 24;
+      font_size = 18;
     }else if(window_width < 681){
       font_size = 28;
     }else if(window_width < 961){
@@ -58,25 +58,26 @@
     slidesPerView:'auto',
     mode:'vertical',
     calculateHeight: true,
-     freeMode : true, //Enable free mode
+    freeMode : true, //Enable free mode
     freeModeFluid : true, //Enable 'fluid' free mode
     watchActiveIndex: true,
     onTouchStart: function() {
       holdPosition = 0;
+      //Show loader
+      $('.preloader').addClass('visible');
+
     },
     onResistanceBefore: function(s, pos){
       holdPosition = pos;
     },
     onTouchEnd: function(){
-      if (holdPosition>100) {
+      if (holdPosition > 100) {
+        
         // Hold Swiper in required position
         mySwiper.setWrapperTranslate(0,100,0)
 
         //Dissalow futher interactions
         mySwiper.params.onlyExternal=true
-
-        //Show loader
-        $('.preloader').addClass('visible');
 
         //Load slides
         loadNextItem();

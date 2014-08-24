@@ -18,6 +18,6 @@ gem 'rolify'
 gem 'simple_form'
 
 #blow only render on linux
-#gem 'therubyracer', :platform=>:ruby
-#gem 'mechanize'
-#gem 'hpricot'
+gem 'therubyracer', :platform=>:ruby
+gem 'mechanize'
+gem 'hpricot'

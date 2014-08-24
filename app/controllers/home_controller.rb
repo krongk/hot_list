@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @items = Item.order("id DESC").limit(7).reverse
+    @items = Item.order("id DESC").limit(5).reverse
     session[:offset] = @items.first.id
   end
 

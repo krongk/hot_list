@@ -66,20 +66,18 @@ body {
 /*http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/*/
 .swiper-slide .title{
   position: relative;
-  top: 50%;
+  top: 33%;
   transform: translateY(-50%);
 }
 
 .swiper-slide .title{
   text-align: left;
-  font-size: 42px;
+  font-size: 24px;
   margin: 0px 5px 0px 15px;
 }
 .swiper-slide .title a, .swiper-slide .title a:visited{ 
   color: #fff;
   text-decoration: none;
-  display: block;
-  overflow: hidden;
 }
 
 .gray{ background: gray;}
